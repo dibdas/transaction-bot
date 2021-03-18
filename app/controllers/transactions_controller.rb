@@ -4,7 +4,7 @@ class TransactionsController < ApplicationController
 
   # GET /transactions or /transactions.json
   def index
-    @transactions = Transaction.includes(:groups).where(user_id:current_user.id).joins(:groups)
+    @transactions = Transaction.includes(:groups).where(user_id: current_user.id).joins(:groups)
     @transactions_sum = Transaction.where(user_id: current_user.id).joins(:groups).sum(:amount)
   end
 
@@ -21,7 +21,7 @@ class TransactionsController < ApplicationController
     @transaction = current_user.transactions.build(transaction_params)
     if @transaction.save
       group_id = params[:transaction][:group_id]
-      TransactionsGroup.create(group_id: group_id,transaction_id: @transaction.id) if group_id
+      TransactionsGroup.create(group_id: group_id, transaction_id: @transaction.id) if group_id
       flash[:success] = 'You created new payment'
       redirect_to root_path
     else
@@ -37,11 +37,11 @@ class TransactionsController < ApplicationController
   # PATCH/PUT /transactions/1 or /transactions/1.json
   def update
     transaction = Transaction.find(params[:id])
-      if @transaction.update(transaction_params)
-        flash[:success]='Transaction was successfully updated.'
-      else
-        render :edit
-    
+    if @transaction.update(transaction_params)
+      flash[:success] = 'Transaction was successfully updated.'
+    else
+      render :edit
+
     end
   end
 

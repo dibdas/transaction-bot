@@ -8,9 +8,9 @@ class GroupsController < ApplicationController
 
   # GET /groups/1 or /groups/1.json
   def show
-    #@transactions = Transaction.includes(:groups).where(user_id:current_user.id).joins(:groups)
+    # @transactions = Transaction.includes(:groups).where(user_id:current_user.id).joins(:groups)
     @group = Group.find(params[:id])
-    @group_trans = @group.transactions
+    @group_transactions = @group.transactions
   end
 
   # GET /groups/new

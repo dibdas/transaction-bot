@@ -1,4 +1,4 @@
 class Transaction < ApplicationRecord
-    has_many :transactions_groups, dependent: :destroy
-    has_many :groups, through: :transactions_groups
+  has_many :transactions_groups, dependent: :destroy
+  has_many :groups, through: :transactions_groups
 end
