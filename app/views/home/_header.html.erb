@@ -1,0 +1,26 @@
+<!-- As a heading -->
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">t-bot</span>
+    <ul class="nav ">
+  
+        <%if user_signed_in?%>
+        
+        <li class="nav-item">
+        <%= link_to 'sign out', destroy_user_session_path,method: :delete, class:"nav-link"%>
+        </li>
+        <li class="nav-item">
+        <%= link_to 'edit profile', edit_user_registration_path,class:"nav-link"%>
+        </li>
+        <%else%>
+        <li class="nav-item">
+        <%= link_to 'sign up',new_user_registration_path,class:"nav-link "%>
+        </li>
+         <li class="nav-item">
+        <%= link_to 'sign in', new_user_session_path,class:"nav-link"%>
+        </li>
+        <%end%>
+
+</ul>
+  </div>
+</nav>

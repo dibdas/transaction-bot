@@ -1,0 +1,15 @@
+showpppppppppppp
+<div class="card text-center" style="width: 18rem;">
+  <%= image_tag("user.jpg", width:100) %>
+  <div class="card-body">
+    <h5 class="card-title">hi there <%= current_user.username %></h5>
+    <p class="card-text">this is a transaction bot</p>
+    <div class="btn btn-warning">
+    <%= link_to 'groups',groups_path %>
+    </div>
+    <div class="btn btn-warning">
+    <%= link_to 'transactions',transactions_path %>
+    </div>
+    <div class="btn btn-warning">all external transactions</div>
+  </div>
+</div>
