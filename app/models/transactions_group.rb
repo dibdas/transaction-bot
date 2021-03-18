@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class TransactionsGroup < ApplicationRecord
   belongs_to :group
   # belongs_to :transaction
