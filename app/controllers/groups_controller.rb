@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
   def show
     # @transactions = Transaction.includes(:groups).where(user_id:current_user.id).joins(:groups)
     @group = Group.find(params[:id])
-    @group_transactions = @group.transactions
+    @group_transactions = @group.transaction.paginate.order('created_at DESC')
   end
 
   # GET /groups/new
