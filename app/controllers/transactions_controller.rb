@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TransactionsController < ApplicationController
   before_action :set_transaction, only: %i[show edit update destroy]
   before_action :authenticate_user!
@@ -5,7 +7,7 @@ class TransactionsController < ApplicationController
   # GET /transactions or /transactions.json
   def index
     @transactions = Transaction.includes(:user).where(user_id: current_user.id).joins(:groups)
-    @transactions_sum = Transaction.where(user_id: current_user.id).joins(:groups).sum(:amount)
+    @total = Transaction.where(user_id: current_user.id).joins(:groups).sum(:amount)
   end
 
   # GET /transactions/1 or /transactions/1.json
