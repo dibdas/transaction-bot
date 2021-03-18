@@ -36,7 +36,7 @@ class TransactionsController < ApplicationController
 
   # PATCH/PUT /transactions/1 or /transactions/1.json
   def update
-    transaction = Transaction.find(params[:id])
+    # transaction = Transaction.find(params[:id])
     if @transaction.update(transaction_params)
       flash[:success] = 'Transaction was successfully updated.'
     else
