@@ -11,7 +11,7 @@ class GroupsController < ApplicationController
   def show
     # @transactions = Transaction.includes(:groups).where(user_id:current_user.id).joins(:groups)
     @group = Group.find(params[:id])
-    @group_transactions = @group.transaction.order('created_at DESC')
+    @group_transactions = @group.transaction
   end
 
   # GET /groups/new
