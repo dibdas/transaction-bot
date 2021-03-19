@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= @group.name%></h1>
+<% @group_transactions.each do |g_t| %>
+<h1><%= g_t.name%></h1>
+<%end%>
  
 
 
