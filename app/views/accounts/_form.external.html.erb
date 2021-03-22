@@ -16,11 +16,6 @@
     <%= form.text_field :name,class:"form-control" %>
   </div>
 
-  <div class="form-control">
-    <%= form.label :Groups %>
-    <%= form.collection_select :group_id,Group.all,:id, :name,{prompt:'Select the group'},
-    class:"form-control" %>
-  </div>
 
   <div class="form-control">
     <%= form.label :amount %>

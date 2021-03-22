@@ -57,7 +57,6 @@ class AccountsController < ApplicationController
 
   def external_transaction
     @external = current_user.accounts.where(group_id: nil)
-
   end
 
   private
@@ -69,6 +68,6 @@ class AccountsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def account_params
-    params.require(:account).permit(:name, :amount, :user_id)
+    params.require(:account).permit(:name, :amount, :user_id, :group_id)
   end
 end
