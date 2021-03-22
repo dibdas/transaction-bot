@@ -9,9 +9,9 @@ class GroupsController < ApplicationController
 
   # GET /groups/1 or /groups/1.json
   def show
-    # @transactions = Transaction.includes(:groups).where(user_id:current_user.id).joins(:groups)
+    # @transaction = Account.includes(:groups).where(user_id:current_user.id).joins(:groups)
     @group = Group.find(params[:id])
-    @group_transactions = @group.transactions
+    @group_transactions = @group.accounts
   end
 
   # GET /groups/new
@@ -39,6 +39,6 @@ class GroupsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def group_params
-    params.require(:group).permit(:name, :icon, :user_id)
+    params.require(:group).permit(:name, :user_id)
   end
 end

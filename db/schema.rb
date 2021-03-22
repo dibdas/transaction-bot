@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_319_172_016) do
+ActiveRecord::Schema.define(version: 20_210_320_145_718) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20_210_319_172_016) do
     t.bigint 'user_id', null: false
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
+    t.bigint 'group_id', null: false
+    t.index ['group_id'], name: 'index_accounts_on_group_id'
     t.index ['user_id'], name: 'index_accounts_on_user_id'
   end
 
@@ -61,15 +63,6 @@ ActiveRecord::Schema.define(version: 20_210_319_172_016) do
     t.index ['user_id'], name: 'index_groups_on_user_id'
   end
 
-  create_table 'transactions_groups', force: :cascade do |t|
-    t.bigint 'group_id', null: false
-    t.bigint 'transaction_id', null: false
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['group_id'], name: 'index_transactions_groups_on_group_id'
-    t.index ['account_id'], name: 'index_transactions_groups_on_account_id'
-  end
-
   create_table 'users', force: :cascade do |t|
     t.string 'email', default: '', null: false
     t.string 'encrypted_password', default: '', null: false
@@ -83,10 +76,9 @@ ActiveRecord::Schema.define(version: 20_210_319_172_016) do
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
+  add_foreign_key 'accounts', 'groups'
   add_foreign_key 'accounts', 'users'
   add_foreign_key 'active_storage_attachments', 'active_storage_blobs', column: 'blob_id'
   add_foreign_key 'active_storage_variant_records', 'active_storage_blobs', column: 'blob_id'
   add_foreign_key 'groups', 'users'
-  add_foreign_key 'transactions_groups', 'accounts', column: 'transaction_id'
-  add_foreign_key 'transactions_groups', 'groups'
 end

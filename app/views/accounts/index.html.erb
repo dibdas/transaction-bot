@@ -2,7 +2,7 @@
 
 <h1>Transactions</h1>
  <h3>Total amount: <%= @total %></h5>
-    <% @transactions.each do |transaction| %>
+    <% @accounts.each do |transaction| %>
       
     <div class="list-group">
 
@@ -11,14 +11,14 @@
    <div class="list-group-item list-group-item-action"><%= transaction.amount %></div>
    
     <div class="list-group-item list-group-item-action"><div class='d-flex justify-content-between align-items-center'>
-                  <h5>Group by: <%= transaction.name %> </h5>
+                  <h5>Group : <%= transaction.group.name %> </h5>
                    <h5><%= transaction.created_at.strftime("%d %B %Y") %> </h5>
             </div>
            
            
            <div class="d-flex justify-content-between">
            <%= link_to 'Show', transaction,class:'btn btn-warning' %>
-        <%= link_to 'Edit', edit_transaction_path(transaction),class:'btn btn-warning' %>
+        <%= link_to 'Edit', edit_account_path(transaction),class:'btn btn-warning' %>
         <%= link_to 'Destroy', transaction,class:'btn btn-warning', method: :delete, data: { confirm: 'Are you sure?' } %>
       
            </div>
@@ -31,6 +31,6 @@
 
 <br>
 
-<%= link_to 'New Transaction', new_transaction_path,class:"btn btn-warning" %>
+<%= link_to 'New Transaction', new_account_path,class:"btn btn-warning" %>
 <br/>
 <%= link_to 'Back', root_path,class: 'btn btn-warning'%>
