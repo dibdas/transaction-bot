@@ -55,6 +55,11 @@ class AccountsController < ApplicationController
     end
   end
 
+  def external_transaction
+    @external = current_user.accounts.where(group_id: nil)
+
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -64,6 +69,6 @@ class AccountsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def account_params
-    params.require(:account).permit(:name, :amount, :user_id, :group_id)
+    params.require(:account).permit(:name, :amount, :user_id)
   end
 end
