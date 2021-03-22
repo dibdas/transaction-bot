@@ -1,6 +1,6 @@
 showpppppppppppp
 <div class="d-flex justify-content-center my-5">
-<div class="card align-items-center text-center px-4" style="width: 20rem;">
+<div class="card align-items-center text-center px-4" >
   <%= image_tag("user.jpg", width:100) %>
   <div class="card-body">
     <h5 class="card-title">hi there <%= current_user.username %></h5>
@@ -11,7 +11,7 @@ showpppppppppppp
     <div class="btn btn-warning">
     <%= link_to 'accounts',accounts_path %>
     </div>
-    <div class="btn btn-warning"><%= link_to 'all external transactions',external_transaction_path %></div>
+    <div class="btn btn-warning"><%= link_to 'all external transactions',new_account_path %></div>
   </div>
 </div>
 </div>

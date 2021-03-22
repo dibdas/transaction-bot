@@ -56,7 +56,8 @@ class AccountsController < ApplicationController
   end
 
   def external_transaction
-    @external = current_user.accounts.where(group_id: nil)
+    user = User.find_by(id: current_user.id)
+    @external = user.account.where(group_id: nil)
   end
 
   private

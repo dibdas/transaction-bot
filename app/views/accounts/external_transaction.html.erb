@@ -1,4 +1,5 @@
-    
+    ghvjuhg
  <% @external.each do |t| %>
-    <h1><%= t.name%></h1>
+    <h1><%= t.user_id.name%></h1>
     <%end%>
+    <%= link_to 'Create new', new_account_path, :class => 'btn btn-warning' %>
