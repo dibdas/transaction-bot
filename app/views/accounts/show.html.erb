@@ -2,10 +2,10 @@
 
     <div class="list-group my-5">
 
-  <div class="list-group-item list-group-item-action"> <%= @account.name %></h4></div>
+  <div class="list-group-item list-group-item-action"><h4>Transaction name:<%= @account.name %></h4></div>
   
-   <div class="list-group-item list-group-item-action"> <%= @account.amount %></div>
+   <div class="list-group-item list-group-item-action"><h4>Transaction amount:<%= @account.amount %></div>
 </div>
 
-<%= link_to 'Edit', edit_account_path(@account) %> |
-<%= link_to 'Back', root_path %>
+<%= link_to 'Edit', edit_account_path(@account),class:"btn btn-warning" %> |
+<%= link_to 'Back', root_path,class:"btn btn-warning" %>
