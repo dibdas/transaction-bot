@@ -19,7 +19,7 @@
            <div class="d-flex justify-content-between">
            <%= link_to 'Show', transaction,class:'btn btn-warning' %>
         <%= link_to 'Edit', edit_account_path(transaction),class:'btn btn-warning' %>
-        <%= link_to 'Destroy', transaction,class:'btn btn-warning', method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Destroy',  account_path(transaction),class:'btn btn-warning', method: :delete, data: { confirm: 'Are you sure?' } %>
       
            </div>
            </div>

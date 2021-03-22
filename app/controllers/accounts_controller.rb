@@ -40,6 +40,7 @@ class AccountsController < ApplicationController
     # transaction = Transaction.find(params[:id])
     if @account.update(account_params)
       flash[:success] = 'Transaction was successfully updated.'
+      redirect_to accounts_path
     else
       render :edit
 
@@ -50,14 +51,14 @@ class AccountsController < ApplicationController
   def destroy
     @account.destroy
     respond_to do |format|
-      format.html { redirect_to transactions_url, notice: 'Transaction was successfully destroyed.' }
+      format.html { redirect_to accounts_url, notice: 'Transaction was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   def external_transaction
     user = User.find_by(id: current_user.id)
-    @external = user.account.where(group_id: nil)
+    @external = user.account.left_outer_joins(:groups).where('groups.id IS NULL')
   end
 
   private

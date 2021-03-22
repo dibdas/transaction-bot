@@ -24,6 +24,7 @@ class GroupsController < ApplicationController
     @group = current_user.groups.build(group_params)
     if @group.save
       flash[:success] = 'Group was successfully created.'
+      redirect_to root_path
     else
       render :new
 
