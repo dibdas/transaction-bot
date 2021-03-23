@@ -24,7 +24,7 @@ class AccountsController < ApplicationController
       group_id = params[:account][:group_id]
       Account.create(group_id: group_id) if group_id
       flash[:success] = 'You created new payment'
-      redirect_to root_path
+      redirect_to accounts_path
     else
       render :new
     end
