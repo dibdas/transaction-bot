@@ -1,4 +1,3 @@
-rubocop:disable Lint/UselessAssignment
 require 'rails_helper'
 
 RSpec.describe Account, type: :model do
