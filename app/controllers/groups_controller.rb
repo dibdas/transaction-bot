@@ -12,6 +12,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    @group_t = @group.accounts
   end
 
   def create
