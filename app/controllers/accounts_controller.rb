@@ -21,7 +21,7 @@ class AccountsController < ApplicationController
 
       if @account.group_id.nil?
 
-        redirect_to external_external_transaction_path, notice: 'Transaction expense was successfully created.'
+        redirect_to external_transaction_path, notice: 'Transaction expense was successfully created.'
 
       else
 
@@ -37,22 +37,22 @@ class AccountsController < ApplicationController
   end
 
   def show
-    @transaction = Account.find(params[:id])
+    @account = Account.find(params[:id])
   end
 
   def edit
-    @transaction = current_user.Accounts.find(params[:id])
+    @account = current_user.accounts.find(params[:id])
   end
 
   def update
-    @transaction = current_user.accountns.find(params[:id])
+    @transaction = current_user.accounts.find(params[:id])
     if @transaction.update(transaction_params)
 
       if @transaction.group_id.nil?
 
-        redirect_to external_path, notice: 'external transaction was successfully updated.'
+        redirect_to external_transaction_path, notice: 'external transaction was successfully updated.'
       else
-        redirect_to transactions_path, notice: 'transaction was successfully updated.'
+        redirect_to accounts_path, notice: 'transaction was successfully updated.'
       end
 
     else
@@ -67,6 +67,9 @@ class AccountsController < ApplicationController
   end
 
   private
+  def set_transaction
+    @account = Account.find(params[:id])
+  end
 
   def transaction_params
     params.require(:account).permit(:name, :amount, :group_id)

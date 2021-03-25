@@ -11,8 +11,9 @@ class GroupsController < ApplicationController
   end
 
   def new
-    @group = Group.new
+    @group = current_user.groups.find(params[:id])
     @group_t = @group.accounts
+    @total_g = @group_t.sum(:amount)
   end
 
   def create

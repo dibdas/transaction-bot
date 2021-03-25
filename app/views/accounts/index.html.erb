@@ -2,24 +2,24 @@
 
 <h1>Transactions</h1>
  <h3>Total amount: <%= @total %></h5>
-    <% @accounts.each do |transaction| %>
+    <% @accounts.each do |tn| %>
       
     <div class="list-group">
 
-  <div class="list-group-item list-group-item-action"><h4> Transaction name :<%= transaction.name %></h4></div>
+  <div class="list-group-item list-group-item-action"><h4> Transaction name :<%= tn.name %></h4></div>
   
-   <div class="list-group-item list-group-item-action"><%= transaction.amount %></div>
+   <div class="list-group-item list-group-item-action"><%= tn.amount %></div>
    
     <div class="list-group-item list-group-item-action"><div class='d-flex justify-content-between align-items-center'>
-                  <h5>Group : <%= transaction.group.name %> </h5>
-                   <h5><%= transaction.created_at.strftime("%d %B %Y") %> </h5>
+                  <h5>Group : <%= tn.group.name %> </h5>
+                   <h5><%= tn.created_at.strftime("%d %B %Y") %> </h5>
             </div>
            
            
            <div class="d-flex justify-content-between">
-           <%= link_to 'Show', transaction,class:'btn btn-warning' %>
-        <%= link_to 'Edit', edit_account_path(transaction),class:'btn btn-warning' %>
-        <%= link_to 'Destroy',  account_path(transaction),class:'btn btn-warning', method: :delete, data: { confirm: 'Are you sure?' } %>
+           <%= link_to 'Show', tn,class:'btn btn-warning' %>
+        <%= link_to 'Edit', edit_account_path(tn),class:'btn btn-warning' %>
+        <%= link_to 'Destroy',  account_path(tn),class:'btn btn-warning', method: :delete, data: { confirm: 'Are you sure?' } %>
       
            </div>
            </div>
