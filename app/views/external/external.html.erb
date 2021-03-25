@@ -20,11 +20,11 @@
       total amount
     </div>
     <div class="actual_total_amount">
-      $ <%= @external_total %>
+      $ <%= @external__for_total %>
     </div>
   </div>
   <div class="container t-c">
-    <% @external_user_transactions.each do |t| %>
+    <% @external_for_user_transactions.each do |t| %>
       <div class="card mb-3">
         <div class="row no-gutters">
           <div class="col-md-4 grp-icn">
@@ -47,3 +47,4 @@
   <br>
   <%= link_to "Add new", new_account_path , :class => "btn btn-success  new_trans" %>
 </section>
+<%= link_to "Back", root_path , :class => "btn btn-primary " %>

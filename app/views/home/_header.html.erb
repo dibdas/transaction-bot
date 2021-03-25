@@ -1,26 +1,28 @@
 <!-- As a heading -->
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1">t-bot</span>
-    <ul class="nav ">
+
+  <div class="container-fluid justify-content-between" style="background-color:#3778c2">
+   <div class = "d-flex justify-content-center " style ="color:#434b54"><h4>TRANSACTION</h4></div>
+    <ul class="nav justify-content-end" >
+    
   
         <%if user_signed_in?%>
         
         <li class="nav-item">
-        <%= link_to 'sign out', destroy_user_session_path,method: :delete, class:"nav-link"%>
+        <%= link_to 'sign out', destroy_user_session_path,method: :delete, class:"nav-link text-white"%>
         </li>
         <li class="nav-item">
-        <%= link_to 'edit profile', edit_user_registration_path,class:"nav-link"%>
+        <%= link_to 'edit profile', edit_user_registration_path,class:"nav-link text-white"%>
         </li>
         <%else%>
         <li class="nav-item">
-        <%= link_to 'sign up',new_user_registration_path,class:"nav-link "%>
+        <%= link_to 'sign up',new_user_registration_path,class:"nav-link text-white "%>
         </li>
          <li class="nav-item">
-        <%= link_to 'sign in', new_user_session_path,class:"nav-link"%>
+        <%= link_to 'sign in', new_user_session_path,class:"nav-link text-white"%>
         </li>
         <%end%>
 
 </ul>
-  </div>
-</nav>
+ </div>
+
+</div>

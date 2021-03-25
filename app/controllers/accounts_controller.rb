@@ -67,6 +67,7 @@ class AccountsController < ApplicationController
   end
 
   private
+
   def set_transaction
     @account = Account.find(params[:id])
   end
@@ -75,4 +76,3 @@ class AccountsController < ApplicationController
     params.require(:account).permit(:name, :amount, :group_id)
   end
 end
-

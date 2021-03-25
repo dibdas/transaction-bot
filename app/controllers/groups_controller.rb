@@ -6,12 +6,12 @@ class GroupsController < ApplicationController
     @groups = Group.includes(:user).order(:name)
   end
 
-  def show
-    @group = Group.find(params[:id])
+  def new
+    @group = Group.new
   end
 
-  def new
-    @group = current_user.groups.find(params[:id])
+  def show
+    @group = Group.find(params[:id])
     @group_t = @group.accounts
     @total_g = @group_t.sum(:amount)
   end
