@@ -1,54 +1,32 @@
-
-<section class="transaction_header">
-  <div class="container t-d">
-    <div class="button">
-      <%= link_to root_path do %>
-        <i class="fa fa-bars" aria-hidden="true"></i>
-      <% end %>
-    </div>
-    <div class="title">
+  <div class="title">
       Transactions for a specific group
-    </div>
-    <div class="search">
-      <i class="fa fa-search" aria-hidden="true"></i>
-    </div>
   </div>
-  <h3 class ="text-center">most recent</h3>
-</section>
+   <h3 class ="text-center">most recent</h3>
+
 <section class="transaction_body">
-  <div class="total_amount_sec">
-    <div class="amount_title">
-      total amount
+    <div class="total_amount_sec ">
+          <span>Total amount:$<%= @total_g %><span>
     </div>
-    <div class="actual_total_amount">
-      $ <%= @total_g %>
-    </div>
-  </div>
-  <div class="container t-c">
+<div class="container-fluid ">
     <% @group_t.each do |t| %>
-      <div class="card mb-3">
-        <div class="row no-gutters">
-          <div class="col-md-4 grp-icn">
-            <div class="list-group-item list-group-item-action"><%= image_tag t.group.icon %></div>
-
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title  trns"> <%= t.name %> </h5>
-              <p class="card-text style-up"> <span>$</span> <%= t.amount %></p>
-              <p class="card-text"> <span>created by</span> <%= t.user.username %></p>
-              <p class="card-text"><small class="text-muted"><%= t.created_at %></small></p>
+      <div class="card">
+           <div class="col-4" >
+                <div class="list-group-item group-icon"><%= image_tag t.group.icon,style:"width:120px; display:block" %></div>
+           </div>
+           <div class="col-8">
+                 <div class="card-body">
+                       <h5 class="card-title">Transaction name: <%= t.name %> </h5>
+                       <p class="card-text"> <span>Amount:$</span><%= t.amount %></p>
+                       <p class="card-text"> <span>Created by:</span> <%= t.user.username %></p>
+                       <p class="card-text">Created At: <small class="text-muted"><%= t.created_at %></small></p>
+                  </div>
             </div>
-          </div>
-        </div>
       </div>
-    <% end %>
-  </div>
-  <br>
-  <br>
-  <%= link_to "Add new", new_account_path , :class => "btn btn-success  new_trans" %>
+<%end%>
+</div>
 </section>
 
 
-<%= link_to 'Back', groups_path,class:"btn btn-warning" %>
-<%= link_to 'transcation', new_account_path,class:"btn btn-warning" %>
+
+<%= link_to 'Back', groups_path,class:"btn btn-primary" %>
+<%= link_to 'transcation', new_account_path,class:"btn btn-primary" %>
