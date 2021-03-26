@@ -1,13 +1,13 @@
-  <div class="title">
-      Transactions for a specific group
+  <div class="title ">
+      <h4>Transactions for a specific group</h4>
   </div>
-   <h3 class ="text-center">most recent</h3>
+   <h4 class ="text-center">most recent</h4>
 
 <section class="transaction_body">
     <div class="total_amount_sec ">
-          <span>Total amount:$<%= @total_g %><span>
+          <h5>Total amount:$<%= @total_g %></h5>
     </div>
-<div class="container-fluid ">
+<div class="container-fluid mb-4">
     <% @group_t.each do |t| %>
       <div class="card">
            <div class="col-4" >

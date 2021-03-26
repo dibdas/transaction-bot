@@ -1,36 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Transactions</h1>
- <h3>Total amount: <%= @total %></h5>
-    <% @accounts.each do |tn| %>
-      
-    <div class="list-group">
+      <h3>Transactions</h3>
+   <h3 class ="text-center">most recent</h3>
 
-  <div class="list-group-item list-group-item-action"><h4> Transaction name :<%= tn.name %></h4></div>
-  
-   <div class="list-group-item list-group-item-action"><%= tn.amount %></div>
-   
-    <div class="list-group-item list-group-item-action"><div class='d-flex justify-content-between align-items-center'>
-                  <h5>Group : <%= tn.group.name %> </h5>
-                   <h5><%= tn.created_at.strftime("%d %B %Y") %> </h5>
+<section class="transaction_body mb-4">
+    <div class="total_amount_sec ">
+          <h4>Total amount:$<%= @total %></h4>
+    </div>
+<div class="container-fluid ">
+    <% @accounts.each do |t| %>
+      <div class="card">
+           <div class="col-6">
+                 <div class="card-body">
+                       <h5 class="card-title">Transaction name: <%= t.name %> </h5>
+                       <p class="card-text"> <span>Amount:$</span><%= t.amount %></p>
+                       <p class="card-text"> <span>Created by:</span> <%= t.user.username %></p>
+                        <p class="card-text"> <span>Group:</span> <%= t.group.name %></p>
+                       <p class="card-text">Created At: <small class="text-muted"><%= t.created_at %></small></p>
+                       <%= link_to "edit", edit_account_path(t), :class => "btn btn-primary edit_btn" %>
+                        <%= link_to "delete", account_path(t), :class => "btn btn-danger delete_grp_btn", data: {confirm: "Are you sure?"}, :method => :delete %>
+                  </div>
             </div>
-           
-           
-           <div class="d-flex justify-content-between">
-           <%= link_to 'Show', tn,class:'btn btn-warning' %>
-        <%= link_to 'Edit', edit_account_path(tn),class:'btn btn-warning' %>
-        <%= link_to 'Destroy',  account_path(tn),class:'btn btn-warning', method: :delete, data: { confirm: 'Are you sure?' } %>
-      
-           </div>
-           </div>
-           <%end%>
       </div>
-    
-     
- 
+<%end%>
+</div>
+</section>
 
-<br>
 
-<%= link_to 'New Transaction', new_account_path,class:"btn btn-warning" %>
-<br/>
-<%= link_to 'Back', root_path,class: 'btn btn-warning'%>
+
+<%= link_to 'New Transaction', new_account_path,class:"btn btn-primary" %>
+
+<%= link_to 'Back', root_path,class: 'btn btn-primary'%>
