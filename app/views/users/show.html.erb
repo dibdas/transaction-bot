@@ -5,13 +5,13 @@
   <div class="card-body">
     <h5 class="card-title">hi there <%= current_user.username %></h5>
     <p class="card-text">this is a transaction bot</p>
-    <div class="btn btn-warning">
-    <%= link_to 'groups',groups_path %>
+    <div class="btn btn-primary">
+    <%= link_to 'groups',groups_path,class:"text-white" %>
     </div>
-    <div class="btn btn-warning">
-    <%= link_to 'accounts',accounts_path %>
+    <div class="btn btn-primary">
+    <%= link_to 'accounts',accounts_path,class:"text-white" %>
     </div>
-    <div class="btn btn-warning"><%= link_to 'all external transactions',external_transaction_path%></div>
+    <div class="btn btn-primary"><%= link_to 'all external transactions',external_transaction_path,class:"text-white"%></div>
   </div>
 </div>
 </div>

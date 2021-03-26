@@ -1,3 +1,64 @@
+  <div class="title">
+       Extra transactions
+  </div>
+   <h3 class ="text-center">most recent</h3>
+
+<section class="transaction_body mb-4">
+    <div class="total_amount_sec ">
+          <span>Total amount:$<%= @external__for_total %><span>
+    </div>
+<div class="container-fluid ">
+      <% @external_for_user_transactions.each do |t| %>
+      <div class="card">
+           <div class="col">
+                 <div class="card-body">
+                       <h5 class="card-title">Transaction name: <%= t.name %> </h5>
+                       <p class="card-text"> <span>Amount:$</span><%= t.amount %></p>
+                       <p class="card-text"> <span>Created by:</span> <%= t.user.username %></p>
+                       <p class="card-text">Created At: <small class="text-muted"><%= t.created_at %></small></p>
+                       <%= link_to "edit", edit_account_path(t), :class => "btn btn-primary edit_btn" %>
+              <%= link_to "delete", account_path(t), :class => "btn btn-danger delete_grp_btn", data: {confirm: "Are you sure?"}, :method => :delete %>
+                  </div>
+            </div>
+      </div>
+<%end%>
+</div>
+</section>
+
+
+
+<%= link_to 'Back', root_path,class:"btn btn-primary" %>
+<%= link_to 'transcation', new_account_path,class:"btn btn-primary" %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <section class="transaction_header">
   <div class="container t-d">
     <div class="button">
