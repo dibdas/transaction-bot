@@ -14,16 +14,16 @@
 The data models were constructed according to the following Entity Relationship Diagram(ERD):
 
 # All Extra Transaction page
-> ![App](./app/assets/images/all_extra_transactions.png)
+> ![App](app/assets/images/all_extra_transactions.png)
 
 # All Transaction page
-> [App](./app/assets/images/all_transaction.png)
+> [App](app/assets/images/all_transaction.png)
 
 # All Groups page
-> ![App](./app/assets/images/all_groups.png)
+> ![App](app/assets/images/all_groups.png)
 
 # Group Transaction page
-> ![App](.app/assets/images/specified_group_transaction.png)
+> ![App](app/assets/images/specified_group_transaction.png)
 
 # SignUp Page
 > ![App](app/assets/images/signup.png)
