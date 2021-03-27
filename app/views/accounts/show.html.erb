@@ -1,11 +1,28 @@
-<p id="notice"><%= notice %></p>
-
-    <div class="list-group my-5">
-
-  <div class="list-group-item list-group-item-action"><h4>Transaction name:<%= @account.name %></h4></div>
   
-   <div class="list-group-item list-group-item-action"><h4>Transaction amount:<%= @account.amount %></div>
-</div>
+  <p id="notice"><%= notice %></p>
+  
+   
 
-<%= link_to 'Edit', edit_account_path(@account),class:"btn btn-warning" %> |
-<%= link_to 'Back', root_path,class:"btn btn-warning" %>
+<section class="transaction_body mb-4">
+    
+<div class="container-fluid ">
+      <div class="card">
+           
+                 <div class="card-body">
+                       <p class="card-text"><h4>Transaction name:<%= @account.name %></h4></p>
+                        
+                        <p class="card-text"><h4>Transaction amount:<%= @account.amount %></h4></p>
+                       <p class="card-text">Created At: <small class="text-muted"><%= @account.created_at %></small></p>
+                       
+                  </div>
+          
+      </div>
+
+</div>
+</section>
+
+
+
+<%= link_to 'Back', root_path,class:"btn btn-primary" %>|
+<%= link_to 'transcation', new_account_path,class:"btn btn-primary" %>
+
