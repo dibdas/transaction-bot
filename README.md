@@ -14,11 +14,23 @@
 The data models were constructed according to the following Entity Relationship Diagram(ERD):
 
 # All Extra Transaction page
-> ![App]((./app/assets/images/all_extra_transactions.png))
+> ![App](./app/assets/images/all_extra_transactions.png)
+
+# All Transaction page
+>[App](./app/assets/images/all_transaction.png)
+
 # All Groups page
 > ![App](./app/assets/images/all_groups.png)
+
 # Group Transaction page
-> ![App]()
+> ![App](.app/assets/images/specified_group_transaction.png)
+
+# SignUp Page
+>![App](app/assets/images/signup.png)
+
+# login page 
+>![App](app/assets/images/login.png)
+
 
 ## Live Demo
 https://lit-lake-53865.herokuapp.com/users/sign_in
