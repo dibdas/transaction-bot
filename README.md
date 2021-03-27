@@ -17,7 +17,7 @@ The data models were constructed according to the following Entity Relationship 
 > ![App](./app/assets/images/all_extra_transactions.png)
 
 # All Transaction page
->[App](./app/assets/images/all_transaction.png)
+> [App](./app/assets/images/all_transaction.png)
 
 # All Groups page
 > ![App](./app/assets/images/all_groups.png)
@@ -26,10 +26,10 @@ The data models were constructed according to the following Entity Relationship 
 > ![App](.app/assets/images/specified_group_transaction.png)
 
 # SignUp Page
->![App](app/assets/images/signup.png)
+> ![App](app/assets/images/signup.png)
 
 # login page 
->![App](app/assets/images/login.png)
+> ![App](app/assets/images/login.png)
 
 
 ## Live Demo
