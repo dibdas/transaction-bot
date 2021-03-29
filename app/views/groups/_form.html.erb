@@ -17,9 +17,7 @@
   </div>
 
   <div class="form-group">
-  <% if @group.icon.attached? %>
   <%= image_tag @group.icon, style:"width:200px;display:block"%>
-  <%end%>
     <%= form.label :icon %>
     <%= form.file_field :icon, class:"form-control",direct_upload: true%>
   </div>
