@@ -21,7 +21,7 @@
   <%= image_tag @group.icon, style:"width:200px;display:block"%>
   <%end%>
     <%= form.label :icon %>
-    <%= form.file_field :icon, class:"form-control"%>
+    <%= form.file_field :icon, class:"form-control",direct_upload: true%>
   </div>
 
   <div class="action btn btn-primary mt-2">
