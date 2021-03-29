@@ -3,4 +3,5 @@ class Group < ApplicationRecord
   validates :name, presence: true
   has_one_attached :icon
   has_many :accounts
+  validates :name, presence: true
 end
