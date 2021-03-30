@@ -8,23 +8,8 @@
           <h5>Total amount:$<%= @total_g %></h5>
     </div>
 <div class="container-fluid mb-4">
-    <% @group_t.each do |t| %>
-      <div class="card">
-      <% if t.group.icon.attached? %>
-           <div class="col-4" >
-                <div class="list-group-item group-icon"><%= image_tag t.group.icon,style:"width:120px; display:block" %></div>
-           </div>
-           <%end%>
-           <div class="col-8">
-                 <div class="card-body">
-                       <h5 class="card-title">Transaction name: <%= t.name %> </h5>
-                       <p class="card-text"> <span>Amount:$</span><%= t.amount %></p>
-                       <p class="card-text"> <span>Created by:</span> <%= t.user.username %></p>
-                       <p class="card-text">Created At: <small class="text-muted"><%= t.created_at %></small></p>
-                  </div>
-            </div>
-      </div>
-<%end%>
+    <%=show_group(@group_t)%>
+      
 </div>
 </section>
 

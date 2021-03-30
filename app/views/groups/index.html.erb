@@ -9,23 +9,9 @@
 <section class="group_body">
     
 <div class="container-fluid mb-4">
-    <% @groups.each do |t| %>
-      <div class="card">
-      <% if t.icon.attached? %>
-           <div class="col-2" >
-                <div class="list-group-item group-icon"><%=image_tag t.icon.variant(resize:"80x80")%></div>
-           </div>
-           <%end%>
-           <div class="col">
-                 <div class="card-body">
-                       <h5>Transaction name: <%=link_to t.name,t,class:"text-md" %> </h5>
-                      
-                       <p class="card-text"> <span>Created by:</span> <%= t.user.username %></p>
-                       <p class="card-text">Created At: <small class="text-muted"><%= t.created_at %></small></p>
-                  </div>
-            </div>
-      </div>
-<%end%>
+    
+               <div> <%=format_group(@groups)%><div>
+
 </div>
 </section>
 
