@@ -2,7 +2,7 @@ module GroupsHelper
   def format_group(groups)
     result = ''
     groups.each do |t|
-      result << '<div>'
+      result << "<div class='card-body'>"
       result << image_tag(t.icon, style: 'height:10em;')
       result << '  Group name:   ' << '  ' << link_to(t.name, group_path(t.id)) << '  '
       result << 'Transaction by:  ' << t.user.username << '    '
@@ -12,9 +12,7 @@ module GroupsHelper
     result.html_safe
   end
 
-
-
-def show_group(group)
+  def show_group(group)
     result = ''
     group.each do |t|
       result << '<div>'
