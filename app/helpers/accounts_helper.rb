@@ -3,9 +3,9 @@ module AccountsHelper
     result = ''
     accounts.each do |t|
       result << "<div class='card'>"
-      result << 'Transaction name: ' << t.name << '  '
+      result << 'Transaction name:' << t.name
       result << " Amount:$#{t.amount} " << ' '
-      result << ' Group name:   ' << '  ' << t.group.name << '  '
+      result << 'Group Name:' << ' ' << t.group.name << '  '
       result << 'Created by:  ' << t.user.username << '    '
       result << ' Created at: ' << t.created_at.to_formatted_s(:short)
       result << ' ' << link_to('edit', edit_account_path(t.id)) << ' '
