@@ -4,23 +4,7 @@
    <div class = "d-flex justify-content-center"><h3>TRANSACTION</h3></div>
     <ul class="nav justify-content-end" >
      
-  
-        <%if user_signed_in?%>
-        
-        <li class="nav-item">
-        <%= link_to 'sign out', destroy_user_session_path,method: :delete, class:"nav-link text-white"%>
-        </li>
-        <li class="nav-item">
-        <%= link_to 'edit profile', edit_user_registration_path,class:"nav-link text-white"%>
-        </li>
-        <%else%>
-        <li class="nav-item">
-        <%= link_to 'sign up',new_user_registration_path,class:"nav-link text-white "%>
-        </li>
-         <li class="nav-item">
-        <%= link_to 'sign in', new_user_session_path,class:"nav-link text-white"%>
-        </li>
-        <%end%>
+  <%=format_header(@user)%>
 
 </ul>
  </div>

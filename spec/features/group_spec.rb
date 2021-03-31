@@ -1,21 +1,14 @@
 require 'rails_helper'
-
-RSpec.describe 'Create group' do
-  let(:group) { Group.create(name: 'Bar', icon: 'hjgkgbkjl', user_id: user.id) }
-
-  scenario '' do
- 
-    visit new_group_path
-
-    click_on 'New Group'
-
-    fill_in 'Name', with: 'Bar'
-    fill_in 'Icon',  with: 'hjgkgbkjl'
-
-    click_on 'Create Group'
-    sleep(3)
-    visit  groups_path
-    expect(page).to have_content('Foo Bar')
-  end
-
+has_one_attached :image
+validates :width, presence: true, if: ->(item) { !item.image.attached?}
+end
+it 'is valid if image is attached' do
+file = Rails.root.join('spec', 'support', 'assets', 'shipment_item', 'wine-box.jpeg')
+image = ActiveStorage::Blob.create_after_upload!(
+io: File.open(file, 'rb'),
+filename: 'wine-box.jpeg',
+content_type: 'image/jpeg' # Or figure it out from `name` if you have non-JPEGs
+).signed_id
+shipment_item = ShipmentItem.new(image: image)
+expect(shipment_item.valid?).to eq true
 end
