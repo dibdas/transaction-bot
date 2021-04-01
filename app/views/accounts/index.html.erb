@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+      <h3>Transactions</h3>
+   <h3 class ="text-center">most recent</h3>
+
+<section class="transaction_body mb-4">
+    <div class="total_amount_sec ">
+          <h4>Total amount:$<%= @total %></h4>
+    </div>
+<div class="container-fluid ">
+    <div><%= format_accounts(@accounts) %></div>
+      
+</div>
+</section>
+
+
+
+<%= link_to 'New Transaction', new_account_path,class:"btn btn-primary" %>
+
+<%= link_to 'Back', root_path,class: 'btn btn-primary'%>

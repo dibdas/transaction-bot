@@ -1,0 +1,19 @@
+  <div class="title ">
+      <h4>Transactions for a specific group</h4>
+  </div>
+   <h4 class ="text-center">most recent</h4>
+
+<section class="transaction_body">
+    <div class="total_amount_sec ">
+          <h5>Total amount:$<%= @total_g %></h5>
+    </div>
+<div class="container-fluid mb-4">
+    <div><%=show_group(@group_t)%></div>
+      
+</div>
+</section>
+
+
+
+<%= link_to 'Back', groups_path,class:"btn btn-primary" %>
+<%= link_to 'transcation', new_account_path,class:"btn btn-primary" %>

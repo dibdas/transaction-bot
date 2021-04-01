@@ -1,0 +1,20 @@
+  <div class="title">
+       <h4>Extra transactions</h4>
+  </div>
+   <h3 class ="text-center">most recent</h3>
+
+<section class="transaction_body mb-4">
+    <div class="total_amount_sec ">
+          <h4>Total amount:$<%= @external__for_total %></h4>
+    </div>
+<div class="container-fluid ">
+    <div><%= format_external_accounts(@external_for_user_transactions) %></div>
+      
+</div>
+</section>
+
+
+
+<%= link_to 'Back', root_path,class:"btn btn-primary" %>
+<%= link_to 'transcation', new_account_path,class:"btn btn-primary" %>
+

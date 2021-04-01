@@ -1,0 +1,17 @@
+
+<div class="d-flex justify-content-center my-5">
+<div class="card align-items-center text-center px-4" >
+  <%= image_tag("user.jpg", width:100) %>
+  <div class="card-body">
+    <h5 class="card-title">hi there <%= current_user.username %></h5>
+    <p class="card-text">this is a transaction bot</p>
+    <div class="btn btn-primary">
+    <%= link_to 'groups',groups_path,class:"text-white" %>
+    </div>
+    <div class="btn btn-primary">
+    <%= link_to 'accounts',accounts_path,class:"text-white" %>
+    </div>
+    <div class="btn btn-primary"><%= link_to 'all external transactions',external_transaction_path,class:"text-white"%></div>
+  </div>
+</div>
+</div>
