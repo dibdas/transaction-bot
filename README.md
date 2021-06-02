@@ -1,7 +1,7 @@
 # Transaction app
 
 
-> The project is made to  track the financial expenses.
+> An application that allows you to keep track of your expenses and group them into categories.
 
 
 ## Features
