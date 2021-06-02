@@ -1,5 +1,8 @@
 # Transaction app
-gjkl
+
+
+> It is a capstone project i.e to build a website for directory of school.
+
 
 ## Features
 
